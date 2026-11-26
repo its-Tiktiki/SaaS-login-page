@@ -1,3 +1,10 @@
+body{
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+
 .login-container{
     display: flex;
     min-height: 100vh;
@@ -6,7 +13,7 @@
 .brand-panel{
     display: flex;
     flex-direction: column;
-    width: 42%;
+    width: 58%;
     background-color: rgb(0, 0, 0);
     color: aliceblue;
     padding: 48px;
@@ -16,7 +23,7 @@
 .login-panel{
     display: flex;
     flex-direction: column;
-    width: 58%;
+    width: 42%;
     background-color: rgb(250, 254, 255);
     padding: 48px;
     gap: 20px;
@@ -40,16 +47,22 @@ button{
 }
 
 .workspace-box{
-    border: 2px solid;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    padding: 24px;
 }
 
 .heading-workspace{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .workspace-stats{
     display: flex;
-    padding: 24px;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 input:not([type="checkbox"]){
@@ -71,3 +84,51 @@ input:not([type="checkbox"]){
     min-width: 0;
 }
 
+.box{
+    flex: 1 1 80px;
+    padding: 14px 6px;
+    min-width: 80px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #1f2937;
+    border-radius: 10px;
+}
+
+.login-panel form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-panel label{
+    font-weight: 600;
+}
+
+.form-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember-me{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-group input:focus{
+    outline: none;
+    border: 1px solid blueviolet;
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.12);
+}
+
+.remember-me input{
+    height: 16px;
+    width: 16px;
+    accent-color: blueviolet;
+    cursor: pointer;
+}
+
+.remember-me label{
+    cursor: pointer;
+}
