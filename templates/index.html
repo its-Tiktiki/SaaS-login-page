@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA | Sign In</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="brand-panel">
+
+            <div class="spotlight" aria-hidden="true"></div>
+
+            <div class="brand-logo">
+                <span class="logo-mark">N</span>
+                <span>NEXORA</span>
+            </div>
+
+            <h2 class="headline"><span class="word">Everything</span> <span class="word">your</span> <span class="word">team</span> <span class="word">needs,</span> <span class="word">beautifully</span> <span class="word">connected.</span></h2>
+
+            <div class="dashboard-stats">
+
+                <div class="stat">
+                    <h3 data-count="12">12</h3>
+                    <p>Projects</p>
+                    <small>3 added this week</small>
+                </div>
+
+                <div class="stat">
+                    <h3 data-count="8">08</h3>
+                    <p>Tasks completed</p>
+                    <small>On track</small>
+                </div>
+
+                <div class="stat">
+                    <h3 data-count="4">04</h3>
+                    <p>Team members</p>
+                    <small>Active team</small>
+                </div>
+
+            </div>
+
+            <div class="activity-row">
+
+                <div class="activity-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="18" height="18"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="3"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                </div>
+
+                <div class="activity-info">
+                    <h4>Alex updated the landing page</h4>
+                    <p>2 minutes ago</p>
+                </div>
+
+                <div class="team-avatars">
+                    <span class="avatar avatar-one">A</span>
+                    <span class="avatar avatar-two">J</span>
+                    <span class="avatar avatar-three">S</span>
+                    <span class="avatar avatar-four">M</span>
+                    <span class="avatar avatar-more">+2</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="login-panel">
+
+            <div class="login-box">
+
+                <div class="welcome-text" data-view="signin">
+                    <h1>Welcome back</h1>
+                    <p>Sign in to continue to your workspace.</p>
+                </div>
+
+                <p class="notice" id="notice" role="status" hidden></p>
+
+                <form id="signin-form" data-view="signin">
+
+                    <label for="signin-email">Email address</label>
+
+                    <div class="input-group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+
+                        <input
+                            type="email"
+                            name="email"
+                            id="signin-email"
+                            placeholder="you@company.com"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+                    <p class="field-error" id="signin-email-error" role="alert" hidden></p>
+
+                    <label for="signin-password">Password</label>
+
+                    <div class="input-group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+                            <circle cx="12" cy="16" r="1"/>
+                            <rect x="3" y="10" width="18" height="12" rx="2"/>
+                            <path d="M7 10V7a5 5 0 0 1 10 0v3"/>
+                        </svg>
+
+                        <input
+                            type="password"
+                            name="password"
+                            id="signin-password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+                        <button type="button"
+                                class="toggle-pass"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20" height="20"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <path class="eye-off" d="m3 3 18 18"/>
+                            </svg>
+                        </button>
+
+                    </div>
+                    <p class="field-error" id="signin-password-error" role="alert" hidden></p>
+
+                    <div class="form-options">
+
+                        <div class="remember-me">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+
+                        <a href="#" class="forget-pass">Forgot password?</a>
+
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign in</button>
+
+                </form>
+
+                <div class="welcome-text" data-view="signup" hidden>
+                    <h1>Create your account</h1>
+                    <p>Set up your workspace in under a minute.</p>
+                </div>
+
+                <form id="signup-form" data-view="signup" hidden novalidate>
+
+                    <label for="signup-name">Full name</label>
+
+                    <div class="input-group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+
+                        <input
+                            type="text"
+                            name="name"
+                            id="signup-name"
+                            placeholder="Your full name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+                    <p class="field-error" id="signup-name-error" role="alert" hidden></p>
+
+                    <label for="signup-email">Email address</label>
+
+                    <div class="input-group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+
+                        <input
+                            type="email"
+                            name="email"
+                            id="signup-email"
+                            placeholder="you@company.com"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+                    <p class="field-error" id="signup-email-error" role="alert" hidden></p>
+
+                    <label for="signup-password">Password</label>
+
+                    <div class="input-group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+                            <circle cx="12" cy="16" r="1"/>
+                            <rect x="3" y="10" width="18" height="12" rx="2"/>
+                            <path d="M7 10V7a5 5 0 0 1 10 0v3"/>
+                        </svg>
+
+                        <input
+                            type="password"
+                            name="password"
+                            id="signup-password"
+                            placeholder="At least 8 characters"
+                            autocomplete="new-password"
+                            required>
+
+                        <button type="button"
+                                class="toggle-pass"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20" height="20"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <path class="eye-off" d="m3 3 18 18"/>
+                            </svg>
+                        </button>
+
+                    </div>
+                    <p class="field-error" id="signup-password-error" role="alert" hidden></p>
+
+                    <label for="signup-confirm">Confirm password</label>
+
+                    <div class="input-group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+                            <circle cx="12" cy="16" r="1"/>
+                            <rect x="3" y="10" width="18" height="12" rx="2"/>
+                            <path d="M7 10V7a5 5 0 0 1 10 0v3"/>
+                        </svg>
+
+                        <input
+                            type="password"
+                            name="confirm_password"
+                            id="signup-confirm"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            required>
+
+                        <button type="button"
+                                class="toggle-pass"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20" height="20"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <path class="eye-off" d="m3 3 18 18"/>
+                            </svg>
+                        </button>
+
+                    </div>
+                    <p class="field-error" id="signup-confirm-error" role="alert" hidden></p>
+
+                    <div class="remember-me terms">
+                        <input type="checkbox" name="terms" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <p class="field-error" id="terms-error" role="alert" hidden></p>
+
+                    <button type="submit" class="submit-btn">Create account</button>
+
+                </form>
+
+                <div class="divider-text">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="sign-in-alt">
+
+                    <a href="https://google.com" class="social-btn">
+
+                        <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.72 7.18l7.62 5.91c4.45-4.11 7.14-10.16 7.14-17.56z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.12.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.56 10.78l7.97-6.19z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.89l-7.62-5.91c-2.11 1.41-4.81 2.25-8.29 2.25-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        </svg>
+
+                        Google
+
+                    </a>
+
+                    <a href="https://github.com" class="social-btn">
+
+                        <svg width="20" height="20"
+                             viewBox="0 0 24 24"
+                             fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             aria-hidden="true">
+                            <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.81 1.3 3.5.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.32.47-2.39 1.23-3.23-.12-.3-.53-1.53.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.13 3.18.77.84 1.23 1.91 1.23 3.23 0 4.62-2.8 5.65-5.48 5.95.43.37.81 1.1.81 2.22v3.31c0 .32.22.69.83.57A12 12 0 0 0 12 .5z"/>
+                        </svg>
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
+                <p class="signup-text" data-view="signin">
+                    Don't have an account?
+                    <a href="#signup">Create one</a>
+                </p>
+
+                <p class="signup-text" data-view="signup" hidden>
+                    Already have an account?
+                    <a href="#signin">Sign in</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
